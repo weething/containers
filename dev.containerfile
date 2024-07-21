@@ -39,9 +39,8 @@ printf 'PermitRootLogin yes\nPermitEmptyPasswords yes\n' > \
 RUN printf '#!/bin/sh\n\
 set -eu\n\
 service ssh start\n\
-exec /usr/bin/catatonit -P\n\
-' > /usr/local/bin/docker-entrypoint.sh && \
-chmod 0755 /usr/local/bin/docker-entrypoint.sh
+exec /usr/bin/catatonit -P\n' > /docker-entrypoint.sh && \
+chmod 0755 /docker-entrypoint.sh
 
 EXPOSE 22
-ENTRYPOINT /usr/local/bin/docker-entrypoint.sh
+ENTRYPOINT ["/docker-entrypoint.sh"]
