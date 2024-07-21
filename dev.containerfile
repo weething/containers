@@ -44,3 +44,6 @@ chmod 0755 /docker-entrypoint.sh
 
 EXPOSE 22
 ENTRYPOINT ["/docker-entrypoint.sh"]
+
+LABEL org.opencontainers.image.description="WeeThing Development Container" \
+org.opencontainers.image.licenses="GPL-3.0-or-later"
